@@ -2,12 +2,25 @@ doctype html
 html
 	head
 		title xss-labs
+		link(rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css")
 	body
-		h1 xss-labs: #{title}
-		h2 built with express + nodejs
-		h3 author: h-a-c
-		block content
-		br
-		hr
-		footer
-			p Footer Here
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-primary
+	a.navbar-brand(href='#') XSS WMD Labs
+	button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo02', aria-controls='navbarTogglerDemo02', aria-expanded='false', aria-label='Toggle navigation')
+		span.navbar-toggler-icon
+	#navbarTogglerDemo02.collapse.navbar-collapse
+		ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+			li.nav-item.active
+				a.nav-link(href='/')
+					| Home 
+			li.nav-item
+				a.nav-link(href='/articles/add') Add Article
+		form.form-inline.my-2.my-lg-0
+			input.form-control.mr-sm-2(type='search', placeholder='Search')
+			button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+
+block content
+footer
+	p Footer Here
+	script(src='/bower_components/bootstrap/dist/js/bootstrap.js')

@@ -5,4 +5,6 @@ block content
 	h2 index.pug
 	ul
 		each article, i in articles
-			li= article.title
+			li.list-group-item
+				a(href="/article/"+article.id)= article.title
+				
